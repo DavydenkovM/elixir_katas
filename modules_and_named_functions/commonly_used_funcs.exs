@@ -15,6 +15,11 @@ defmodule CommonlyUsedFuncs do
   def pwd do
     IO.puts elem(File.cwd, 1)
   end
+
+  def try_cmd do
+    IO.puts elem(System.cmd("ls", ["-l"]), 0)
+    IO.puts elem(System.cmd("echo", ["hello"]), 0)
+  end
 end
 
 # 1
@@ -30,3 +35,6 @@ CommonlyUsedFuncs.extname("~/dotfiles/.tmux.conf")
 
 # 4
 CommonlyUsedFuncs.pwd
+
+# 5
+CommonlyUsedFuncs.try_cmd
