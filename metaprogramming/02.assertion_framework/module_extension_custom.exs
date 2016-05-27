@@ -36,13 +36,15 @@ defmodule Assertion.Test do
   def run(tests, module) do
     Enum.each tests, fn {test_func, description} ->
       case apply(module, test_func, []) do
-        :ok -> IO.write "."
-        {:fail, reason } -> IO.puts """
-        ===============================================
-        FAILURE: #{description}
-        ===============================================
-        #{reason}
-        """
+        :ok -> 
+          IO.write "."
+        {:fail, reason } -> 
+          IO.puts """
+          ===============================================
+          FAILURE: #{description}
+          ===============================================
+          #{reason}
+          """
       end
     end
   end
@@ -77,7 +79,7 @@ defmodule MathTest do
   use Assertion
 
   test "First test description" do
-    assert 5 == 5
+    assert 5 == 55
   end
 
   test "Second test description" do
